@@ -10,7 +10,12 @@ people = [
     ("Alex", "Skolnick", 8)
 ]
 
-c.executemany("INSERT INTO friends VALUES (?,?,?)", people)
+# c.executemany("INSERT INTO friends VALUES (?,?,?)", people)
+
+for person in people:
+    c.execute("INSERT INTO friends VALUES (?,?,?)", person)
+    print("inserting data")
+
 
 # c.execute(query, data)
 
