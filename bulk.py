@@ -13,9 +13,10 @@ people = [
 # c.executemany("INSERT INTO friends VALUES (?,?,?)", people)
 
 for person in people:
+    average = 0
     c.execute("INSERT INTO friends VALUES (?,?,?)", person)
-    print("inserting data")
-
+    average += person[2]
+print(average/len(people))
 
 # c.execute(query, data)
 
